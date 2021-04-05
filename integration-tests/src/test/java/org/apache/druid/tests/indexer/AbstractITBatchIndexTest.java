@@ -54,7 +54,6 @@ public abstract class AbstractITBatchIndexTest extends AbstractIndexerTest
   public enum InputFormatDetails
   {
     AVRO("avro_ocf", ".avro", "/avro"),
-    AVRO_STREAM("avro_stream", ".avro", "/avro"),
     CSV("csv", ".csv", "/csv"),
     TSV("tsv", ".tsv", "/tsv"),
     ORC("orc", ".orc", "/orc"),
