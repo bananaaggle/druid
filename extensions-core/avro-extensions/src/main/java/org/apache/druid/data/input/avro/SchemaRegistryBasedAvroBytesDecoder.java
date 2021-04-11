@@ -49,7 +49,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
   private final String url;
   private final int capacity;
   private final List<String> urls;
-  private final Map<String, ?> config;
+  private final Map<String, String> config;
   private final Map<String, String> headers;
   private static final Logger LOGGER = new Logger(SchemaRegistryBasedAvroBytesDecoder.class);
 
@@ -59,7 +59,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
       @JsonProperty("url") @Deprecated String url,
       @JsonProperty("capacity") Integer capacity,
       @JsonProperty("urls") @Nullable List<String> urls,
-      @JsonProperty("config") @Nullable Map<String, ?> config,
+      @JsonProperty("config") @Nullable Map<String, String> config,
       @JsonProperty("headers") @Nullable Map<String, String> headers
   )
   {
