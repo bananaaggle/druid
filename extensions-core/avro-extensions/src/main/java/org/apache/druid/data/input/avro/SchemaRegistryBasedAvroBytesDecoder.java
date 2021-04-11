@@ -49,7 +49,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
   private final String url;
   private final int capacity;
   private final List<String> urls;
-  private final Map<String, String> config;
+  private final Map<String, ?> config;
   private final Map<String, String> headers;
   private static final Logger LOGGER = new Logger(SchemaRegistryBasedAvroBytesDecoder.class);
 
