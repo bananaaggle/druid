@@ -68,15 +68,15 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
     this.urls = urls;
     this.config = config;
     this.headers = headers;
-    LOGGER.info(url);
-    LOGGER.info(this.url);
+    LOGGER.error(url);
+    LOGGER.error(this.url);
     for (String key : config.keySet()) {
-      LOGGER.info(key);
-      LOGGER.info((String) config.get(key));
+      LOGGER.error(key);
+      LOGGER.error((String) config.get(key));
     }
     for (String key : this.config.keySet()) {
-      LOGGER.info(key);
-      LOGGER.info((String) this.config.get(key));
+      LOGGER.error(key);
+      LOGGER.error((String) this.config.get(key));
     }
     if (url != null && !url.isEmpty()) {
       this.registry = new CachedSchemaRegistryClient(this.url, this.capacity, this.config, this.headers);
