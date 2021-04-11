@@ -56,7 +56,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
 
   @JsonCreator
   public SchemaRegistryBasedAvroBytesDecoder(
-      @JsonProperty("url") @Deprecated String url,
+      @JsonProperty("url") @Nullable String url,
       @JsonProperty("capacity") Integer capacity,
       @JsonProperty("urls") @Nullable List<String> urls,
       @JsonProperty("config") @Nullable Map<String, ?> config,
