@@ -59,7 +59,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
       @JsonProperty("url") @Deprecated String url,
       @JsonProperty("capacity") Integer capacity,
       @JsonProperty("urls") @Nullable List<String> urls,
-      @JsonProperty("config") @Nullable Map<String, String> config,
+      @JsonProperty("config") @Nullable Map<String, ?> config,
       @JsonProperty("headers") @Nullable Map<String, String> headers
   )
   {
@@ -104,7 +104,7 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
   }
 
   @JsonProperty
-  public Map<String, ?> geConfig()
+  public Map<String, ?> getConfig()
   {
     return config;
   }
