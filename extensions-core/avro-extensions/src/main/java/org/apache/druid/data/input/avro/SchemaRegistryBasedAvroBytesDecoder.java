@@ -33,6 +33,7 @@ import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DecoderFactory;
 import org.apache.druid.java.util.common.RE;
+import org.apache.druid.java.util.common.logger.Logger;
 import org.apache.druid.java.util.common.parsers.ParseException;
 
 import javax.annotation.Nullable;
@@ -50,6 +51,8 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
   private final List<String> urls;
   private final Map<String, ?> config;
   private final Map<String, String> headers;
+  private static final Logger LOGGER = new Logger(SchemaRegistryBasedAvroBytesDecoder.class);
+
 
   @JsonCreator
   public SchemaRegistryBasedAvroBytesDecoder(
@@ -65,6 +68,16 @@ public class SchemaRegistryBasedAvroBytesDecoder implements AvroBytesDecoder
     this.urls = urls;
     this.config = config;
     this.headers = headers;
+    LOGGER.info(url);
+    LOGGER.info(this.url);
+    for (String key : config.keySet()) {
+      LOGGER.info(key);
+      LOGGER.info((String) config.get(key));
+    }
+    for (String key : this.config.keySet()) {
+      LOGGER.info(key);
+      LOGGER.info((String) this.config.get(key));
+    }
     if (url != null && !url.isEmpty()) {
       this.registry = new CachedSchemaRegistryClient(this.url, this.capacity, this.config, this.headers);
     } else {
